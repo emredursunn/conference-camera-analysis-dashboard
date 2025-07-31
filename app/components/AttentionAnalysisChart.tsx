@@ -167,9 +167,6 @@ const AttentionAnalysisChart: FC<Props> = ({
     if (!selectedSec) return null;
     const drill = drilldown[selectedSec as keyof typeof drilldown];
     if (!drill) return null;
-
-    const findY = (sec: number) => drill.points.find((p) => p.second >= sec)?.attention || 0;
-
     const markPoints = [
       ...drill.points
         .filter((p:any) => p.image)
