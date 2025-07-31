@@ -108,6 +108,9 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
     },
     tooltip: {
       trigger: 'axis',
+      backgroundColor: 'rgba(17, 24, 39, 0.9)',
+      borderColor: '#374151',
+      borderWidth: 1,
       axisPointer: { type: 'cross', label: { backgroundColor: '#6B7280' } },
       formatter: (params: any[]) => {
         if (!params || !params.length) return '';

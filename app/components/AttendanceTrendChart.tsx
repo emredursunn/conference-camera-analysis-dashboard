@@ -134,6 +134,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       nameGap: 30,
       axisLabel: { color: "#9CA3AF" },
       axisLine: { lineStyle: { color: "#6B7280" } },
+      interval: 20,
     },
     yAxis: {
       type: "value",

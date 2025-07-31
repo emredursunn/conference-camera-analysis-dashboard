@@ -171,18 +171,6 @@ const AttentionAnalysisChart: FC<Props> = ({
     const findY = (sec: number) => drill.points.find((p) => p.second >= sec)?.attention || 0;
 
     const markPoints = [
-      ...drill.incidents.map((i) => ({
-        name: i.type,
-        value: i.type === "sleep" ? "💤" : "📱",
-        xAxis: i.second,
-        yAxis: findY(i.second) + 5,
-        symbolSize: 25,
-        label: { show: true, fontSize: 16 },
-        itemStyle: { color: "transparent" },
-        tooltip: {
-          formatter: `${i.user} was ${i.type === "sleep" ? "asleep" : "on phone"} at ${i.second}s`,
-        },
-      })),
       ...drill.points
         .filter((p:any) => p.image)
         .map((p:any) => ({
@@ -254,6 +242,15 @@ const AttentionAnalysisChart: FC<Props> = ({
     }
   };
 
+  const incidentStats = (() => {
+    if (!selectedSec) return null;
+    const drill = drilldown[selectedSec as keyof typeof drilldown];
+    if (!drill) return null;
+    const phoneCount = drill.incidents.filter((i) => i.type === "phone").length;
+    const sleepCount = drill.incidents.filter((i) => i.type === "sleep").length;
+    return { phoneCount, sleepCount };
+  })();
+
   return (
     <div className="py-8 h-full w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -271,14 +268,18 @@ const AttentionAnalysisChart: FC<Props> = ({
                 onEvents={{ click: onLineClick }}
               />
               <div className="flex justify-center items-center gap-x-6 gap-y-2 flex-wrap mt-4 text-xs text-gray-400">
-                <span className="flex items-center gap-1.5">
-                  <span className="text-base">💤</span>
-                  <span>Participant asleep</span>
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="text-base">📱</span>
-                  <span>Participant on phone</span>
-                </span>
+                {incidentStats && (
+                  <>
+                    <span className="flex items-center gap-1.5">
+                      <span className="text-base">📱</span>
+                      <span>On Phone: <b>{incidentStats.phoneCount}</b></span>
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="text-base">💤</span>
+                      <span>Asleep: <b>{incidentStats.sleepCount}</b></span>
+                    </span>
+                  </>
+                )}
                 <span className="flex items-center gap-1.5">
                   <span className="text-base">📷</span>
                   <span>Peak moment (clickable)</span>
