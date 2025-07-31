@@ -6,6 +6,7 @@ import AttentionAnalysisChart from "./components/AttentionAnalysisChart";
 import OverallEmotionDonutChart from "./components/OverallEmotionDonutChart";
 import VIPEmotionRadarChart from "./components/VIPEmotionRadarChart";
 import EmotionOverTimeChart from "./components/EmotionOverTimeChart";
+import ConferenceReactionsChart from "./components/ConferenceReactionsChart";
 
 // --- ANA DASHBOARD BILEŞENİ ---
 const App = () => {
@@ -48,6 +49,11 @@ const App = () => {
         </div>
         <div className="bg-[#171717] p-6 rounded-xl shadow-lg border border-gray-700">
           <VIPEmotionRadarChart />
+        </div>
+
+                {/* 5. Satır: Reactions Chart (tam genişlik) */}
+        <div className="lg:col-span-2 bg-[#171717] p-6 rounded-xl shadow-lg border border-gray-700">
+          <ConferenceReactionsChart />
         </div>
       </main>
 
