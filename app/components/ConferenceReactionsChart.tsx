@@ -276,6 +276,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       trigger: 'item',
       formatter: function(params: any) {
         const [time, confidence, timeStr] = params.data;
+        console.log(time)
         return `
           <strong>${params.seriesName}</strong><br/>
           Time: ${timeStr}<br/>
