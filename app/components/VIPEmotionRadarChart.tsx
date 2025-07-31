@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import ReactECharts from "echarts-for-react";
-import type { FC, ChangeEvent } from "react";
+import type { FC } from "react";
 
 // -------------------------------------------------------------
 // VIPEmotionRadarChart.tsx
@@ -46,15 +46,15 @@ export const vipEmotionProfiles = {
 };
 
 interface Props {
-  data?: typeof vipEmotionProfiles;
+  data?: any;
   height?: number;
 }
 
 const COLOR_POOL = ["#3B82F6", "#EF4444", "#10B981"];
 
 const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 350 }) => {
-  const names = Object.keys(data);
-  const emotions = Object.keys(data[names[0]]);
+  const names= Object.keys(data);
+  const emotions= Object.keys(data[names[0]]);
 
   const [selected, setSelected] = useState<string[]>([names[0]]);
 
@@ -73,7 +73,7 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
   const indicators = emotions.map((emo) => ({ name: emo, max: 100 }));
 
   const seriesData = selected.map((name, idx) => ({
-    value: emotions.map((emo) => data[name as keyof typeof data][emo as keyof typeof data[typeof name]]),
+    value: emotions.map((emo:any) => data[name as keyof typeof data][emo as keyof typeof data[typeof name]]),
     name,
     itemStyle: { color: COLOR_POOL[idx % COLOR_POOL.length] },
     areaStyle: { opacity: 0.25 },

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import ReactECharts from "echarts-for-react";
 import type { FC } from "react";
-import { text } from "stream/consumers";
 
 // ------------------ Dummy Data ------------------ //
 export const attentionSections = [
