@@ -1,0 +1,83 @@
+Grafik 2: Zamana Göre Genel Toplantı Duygu Akışı (Stacked Area + Anotasyonlar)
+🔹 Amaç:
+
+Toplantı boyunca katılımcıların yaşadığı duyguların zaman içerisindeki değişimini ve dağılımını görselleştirmek. Duygusal yoğunluklar, konuşulan konularla eşleştirilir. Öne çıkan anlar (gülme, alkış, görsel yakalama) sembollerle işaretlenir.
+🔹 Grafik Türü:
+
+    Stacked Area Chart (ECharts line serisi areaStyle ile)
+
+    Timeline Segmentasyonu + Event Markers + Tooltip + Custom Annotations
+
+🔹 Yapısal Özellikler:
+
+    X Ekseni: Zaman (dakika bazında, 0–60 dk)
+
+    Y Ekseni: Duygu şiddeti (normalized score, 0–1 arası)
+
+    Section Ayırımı: Her 20 dakikada bir dikey çizgi ile bölüm (section) ayrılır (örn: Sec 1, Sec 2, Sec 3)
+
+    Duygular:
+
+        Neutral, Fear, Stress, Happiness, Sadness, Anger, Surprised, Calmness, Disgust
+
+🔹 Anotasyonlar / Damgalar:
+
+    🎉 Gülme: laugh sembolüyle işaretlenir (örnek: 😂)
+
+    👏 Alkış: clap sembolüyle işaretlenir (örnek: 👏)
+
+    📷 Fotoğraf: Peak noktalar için camera veya photo ikonu ile placeholder fotoğraf gösterilir (örn: /images/peak-sec2.jpg gibi)
+
+🔹 Tooltip İçeriği:
+
+    Zaman: 12:30
+
+    Duygular: "Happiness: 0.56"
+
+    (Varsa) Anotasyon: “👏 Applause detected”
+
+    (Varsa) Text: “Konuşmacı X bu esnada şöyle dedi: ...”
+
+🔹 Sağ Panel:
+
+    Section bazlı konuşulan konular:
+
+    [
+      { section: "Section 1", start_min: 0, end_min: 20, topic: "Project Kickoff & Role Assignment" },
+      { section: "Section 2", start_min: 20, end_min: 40, topic: "Technical Details & Timeline" },
+      { section: "Section 3", start_min: 40, end_min: 60, topic: "Client Expectations & QA" }
+    ]
+
+🔹 Dummy Veri Örneği:
+
+export const emotionOverTime = {
+  timeline: [
+    { minute: 0, Neutral: 0.6, Happiness: 0.3, Anger: 0.05 },
+    { minute: 5, Neutral: 0.4, Happiness: 0.5, Surprised: 0.2 },
+    { minute: 10, Fear: 0.6, Sadness: 0.2, Disgust: 0.1 },
+    { minute: 15, Happiness: 0.6, Calmness: 0.3 },
+    { minute: 20, Neutral: 0.7 },
+    { minute: 25, Happiness: 0.5, Anger: 0.4 },
+    { minute: 30, Stress: 0.6, Disgust: 0.2 },
+    { minute: 35, Calmness: 0.5, Neutral: 0.3 },
+    { minute: 40, Surprised: 0.5, Fear: 0.3 },
+    { minute: 45, Happiness: 0.7 },
+    { minute: 50, Sadness: 0.6 },
+    { minute: 55, Neutral: 0.3, Anger: 0.5 },
+    { minute: 60, Calmness: 0.6 }
+  ],
+  annotations: [
+    { minute: 10, type: "laugh" },
+    { minute: 30, type: "clap" },
+    { minute: 45, type: "photo", image: "/images/peak-sec2.jpg" }
+  ],
+  sections: [
+    { section: "Section 1", start: 0, end: 20, topic: "Project Kickoff & Role Assignment" },
+    { section: "Section 2", start: 20, end: 40, topic: "Technical Details & Timeline" },
+    { section: "Section 3", start: 40, end: 60, topic: "Client Expectations & QA" }
+  ]
+};
+
+🔹 Kullanım Yeri:
+
+Dashboard'un ana akış bölümünde, konuşmanın yapısı ve duygu geçişlerinin görüldüğü merkezi grafik. Yukarıdan genel duygular, sağdan konu akışı takip edilir. İçeriksel analizde çok kıymetlidir.

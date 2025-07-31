@@ -1,0 +1,81 @@
+Grafik 1: Genel Toplantı Duygu Dağılımı
+🔹 Amaç:
+
+Toplantı boyunca tespit edilen duyguların toplam içindeki yüzdesel dağılımını görselleştirmek. Katılımcı bazlı değil, tüm katılım süresi boyunca genel duygu atmosferi sunulur.
+🔹 Grafik Türü:
+
+    Donut Chart (Halka Grafik)
+
+    ECharts pie chart (radius: ['50%', '70%']) ile oluşturulacak.
+
+    Her duygu bir dilimi temsil eder.
+
+    Yüzdeler otomatik hesaplanacak.
+
+    Renkler sabit duygu renk paletine göre atanabilir.
+
+🔹 Kullanılacak Duygular (İngilizce):
+
+    Neutral
+
+    Fear
+
+    Stress
+
+    Happiness
+
+    Sadness
+
+    Anger
+
+    Surprised
+
+    Calmness
+
+    Disgust
+
+🔹 Görsel Özellikler:
+
+    Başlık: Overall Emotion Distribution in Meeting
+
+    Tooltip: Duygu: % oran
+
+    Legend: Duygular, üstte ya da sağda sıralı
+
+    Renkler:
+
+        Neutral → Gri
+
+        Fear → Lacivert
+
+        Stress → Kırmızı
+
+        Happiness → Sarı
+
+        Sadness → Mavi
+
+        Anger → Koyu kırmızı
+
+        Surprised → Turkuaz
+
+        Calmness → Yeşil
+
+        Disgust → Mor
+
+🔹 Dummy Veri (Toplam yüzde 100 olacak şekilde normalize):
+
+export const overallEmotionDistribution = [
+  { emotion: "Neutral", value: 28 },
+  { emotion: "Fear", value: 8 },
+  { emotion: "Stress", value: 15 },
+  { emotion: "Happiness", value: 12 },
+  { emotion: "Sadness", value: 10 },
+  { emotion: "Anger", value: 7 },
+  { emotion: "Surprised", value: 9 },
+  { emotion: "Calmness", value: 9 },
+  { emotion: "Disgust", value: 2 }
+];
+
+🔹 Kullanım Yeri:
+
+Dashboard'da genel özet alanında, ya en üstte ya da sola yerleştirilmiş şekilde. Katılımcı bazlı detaylar olmadan yalnızca toplantının ruh halini yansıtır.

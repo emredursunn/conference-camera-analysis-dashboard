@@ -1,0 +1,81 @@
+ Grafik 6: Toplantı Katılım Trendleri & Çıkış Analizi (Line Chart + Section Labels + Peaks)
+🔹 Amaç:
+
+Toplantı süresince toplam katılımcı sayısını zamana göre görselleştirmek. Aynı zamanda belirli bölümlerde (sections) kaç kişinin çıktığı da gösterilir. Çıkışların fazla olduğu noktalarda dikkat çekici görsel öğeler (dummy fotoğraflar) yerleştirilir. Sağda her bölümde ne konuşulduğu gösterilir.
+🔹 Grafik Türü:
+
+    Line Chart (Çizgi Grafiği)
+
+    ECharts line serisi
+
+    Ana çizgi: Zaman içinde toplam katılımcı sayısı
+
+    Nokta üstü etiket: O noktada kaç kişinin çıktığı
+
+    Dikey çizgilerle section sınırları belirlenir
+
+🔹 Yapısal Özellikler:
+
+    X Ekseni: Zaman (dakika veya saniye bazında)
+
+    Y Ekseni: Toplam katılımcı sayısı
+
+    Her section dikey çizgiyle ayrılır ve yanında sağda konu başlığı görünür
+
+    Peak noktalarında 📷 dummy fotoğraf gösterilir
+
+🔹 Tooltip:
+
+    Zaman: 12:35
+
+    Katılımcı Sayısı: 9
+
+    Çıkan kişi: 3
+
+    (Varsa) Görsel: “📷 Click to preview image”
+
+🔹 Dummy Veri:
+
+export const attendanceTimeline = {
+  series: [
+    { minute: 0, participants: 12 },
+    { minute: 5, participants: 14 },
+    { minute: 10, participants: 13, left: 1 },
+    { minute: 15, participants: 12 },
+    { minute: 20, participants: 11, left: 2, image: "/images/peak-sec2.jpg" },
+    { minute: 25, participants: 11 },
+    { minute: 30, participants: 10 },
+    { minute: 35, participants: 10 },
+    { minute: 40, participants: 9, left: 1 },
+    { minute: 45, participants: 8, left: 2, image: "/images/peak-sec2.jpg" },
+    { minute: 50, participants: 7 },
+    { minute: 55, participants: 7 },
+    { minute: 60, participants: 7 }
+  ],
+  sections: [
+    { section: "Section 1", start: 0, end: 20, topic: "Strategy Kickoff" },
+    { section: "Section 2", start: 20, end: 40, topic: "Budget Review" },
+    { section: "Section 3", start: 40, end: 60, topic: "Action Items & Wrap-up" }
+  ]
+};
+
+🔹 Grafik Etkileşimi:
+
+    Hover ile toplam ve çıkan kişi sayısı gösterilir
+
+    Görsel varsa küçük “image icon” çıkabilir, üzerine tıklanınca dummy preview açılabilir
+
+    Sağ panelde:
+
+        Section sıralaması
+
+        Her section için topic başlığı + “Çıkan kişi sayısı: 3” gibi bilgi
+
+🔹 Kullanım Yeri:
+
+    Dashboard'un “Katılım Dinamikleri” veya “Fiziksel Katılım” sekmesinde yer alır
+
+    Toplantının hangi kısımlarında katılım düştüğü analiz edilir
+
+    “İlgi çeken/gereksiz bulunan anlar” çıkarımı için faydalıdır
+

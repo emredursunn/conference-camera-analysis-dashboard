@@ -1,0 +1,113 @@
+Grafik 3: Toplantı Bölümlerine Göre Dikkat Seviyesi Analizi (Bar + Line Drilldown + Peak Fotoğraflar)
+🔹 Amaç:
+
+Toplantının farklı bölümlerinde (section) katılımcıların dikkat seviyesini analiz etmek. Her bar belirli bir zaman aralığını temsil eder. Tıklanınca o bölümün detaylı dikkat trendi (line chart) gösterilir. Uyuyan veya telefonla ilgilenen katılımcılar özel damgalarla işaretlenir. Dikkatin zirve yaptığı anlarda görsel kayıtlara da erişim sağlanır.
+🔹 Grafik Türleri:
+
+    Özet Grafik (Sol):
+
+        Bar Chart (section bazlı)
+
+        X ekseni: Section adı
+
+        Y ekseni: Ortalama dikkat puanı
+
+    Detaylı Grafik (Sağ):
+
+        Line Chart (tıklanınca açılır)
+
+        X ekseni: Zaman (saniye)
+
+        Y ekseni: Dikkat seviyesi
+
+        Özel damgalar:
+
+            💤 Uyuyan
+
+            📱 Telefonla oynayan
+
+            📷 Peak nokta (fotoğraflı)
+
+🔹 Kullanım Akışı:
+
+    Ana grafikte her bar bir section’ı temsil eder.
+
+    Sağ panelde her section’da konuşulan konu başlığı gösterilir.
+
+    Bar’a tıklanırsa ilgili section’ın detaylı dikkat grafiği görüntülenir.
+
+    Alternatif olarak tüm detaylar inline olarak her barın altında da gösterilebilir.
+
+🔹 Dummy Veriler:
+
+Section ve Konular:
+
+export const attentionSections = [
+  { id: "sec1", title: "Project Overview", start_min: 0, end_min: 10 },
+  { id: "sec2", title: "Sprint Planning", start_min: 10, end_min: 20 },
+  { id: "sec3", title: "Bug Discussion", start_min: 20, end_min: 30 },
+  { id: "sec4", title: "Client Feedback", start_min: 30, end_min: 40 },
+  { id: "sec5", title: "Team Allocation", start_min: 40, end_min: 50 },
+  { id: "sec6", title: "Next Steps", start_min: 50, end_min: 60 }
+];
+
+Ana Bar Chart:
+
+export const sectionAttentionSummary = [
+  { section: "sec1", avg_attention: 72 },
+  { section: "sec2", avg_attention: 85 },
+  { section: "sec3", avg_attention: 66 },
+  { section: "sec4", avg_attention: 54 },
+  { section: "sec5", avg_attention: 61 },
+  { section: "sec6", avg_attention: 78 }
+];
+
+Detay Line Chart (Drilldown) + Olaylar + Fotoğraf:
+
+export const attentionDrilldown = {
+  sec2: {
+    points: [
+      { second: 0, attention: 80 },
+      { second: 60, attention: 76 },
+      { second: 120, attention: 85 },
+      { second: 180, attention: 91, image: "/images/peak-sec2.jpg" }, // 📷
+      { second: 240, attention: 87 }
+    ],
+    incidents: [
+      { second: 70, type: "sleep", user: "john@example.com" },     // 💤
+      { second: 190, type: "phone", user: "maya@example.com" }     // 📱
+    ]
+  }
+}
+
+🔹 Tooltip Özellikleri:
+
+    Bar Chart (Özet):
+
+        Section: Sprint Planning
+
+        Ortalama Dikkat: 85
+
+    Line Chart (Detay):
+
+        Zaman: 03:00
+
+        Dikkat: 91
+
+        📷 Görsel varsa: Tooltip içinde küçük ikon + tıklanınca modal açılır
+
+    Olaylar:
+
+        💤 “John uyudu (70. saniye)”
+
+        📱 “Maya telefonla ilgilendi (190. saniye)”
+
+🔹 Kullanım Yeri:
+
+    Dashboard’da "Dikkat & Katılım" sekmesinde.
+
+    Bar grafiği ile hızlı özet alınır.
+
+    Line grafiği ile detaylı dikkat dağılımı analiz edilir.
+
+    Görsel damgalar dikkat dağıtan veya çeken olaylara odaklanmayı sağlar.
