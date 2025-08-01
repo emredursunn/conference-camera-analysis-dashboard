@@ -79,7 +79,16 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
         padding: 10,
         fontSize: 12,
         alignText: "center",
-        formatter: `${s.topic}`,
+        formatter: function () {
+          // 20 karakterde bir boşluktan bölüp alt satıra atar
+          const topic = s.topic;
+          const maxLen = 20;
+          if (topic.length <= maxLen) return topic;
+          return topic.replace(
+            new RegExp(`(.{1,${maxLen}})(\\s|$)`, "g"),
+            "$1\n"
+          ).trim();
+        },
       },
     },
   ]);
