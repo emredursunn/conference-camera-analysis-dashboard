@@ -85,6 +85,8 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
       stack: 'emotions',
       smooth: true,
       symbol: 'none',
+      color: COLORS[emotion],
+      itemStyle: { color: COLORS[emotion] },
       areaStyle: { color: COLORS[emotion], opacity: 0.8 },
       lineStyle: { width: 1, color: COLORS[emotion] },
       emphasis: { focus: 'series', areaStyle: { opacity: 1 } },
