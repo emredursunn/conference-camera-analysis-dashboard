@@ -39,8 +39,8 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-[28rem] bg-gray-50 shadow-md flex flex-col p-6">
-      <div>
+    <div className="w-[28rem] h-screen bg-gray-50 shadow-md flex flex-col p-6">
+      <div className="flex-1 overflow-y-auto">
         <h2 className="text-xl font-bold text-gray-900">Conferences</h2>
         <ul className="mt-4 space-y-2">
           {conferences.map((conference, idx) => (
