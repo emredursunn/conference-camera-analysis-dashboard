@@ -84,6 +84,19 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
     },
   ]);
 
+  // Vertical lines to indicate section boundaries
+  const markLines = data.sections.slice(1).map((s) => ({
+    xAxis: s.start,
+    lineStyle: {
+      color: "#9CA3AF",
+      type: "dashed",
+      width: 1.5,
+    },
+    label: {
+      show: false,
+    },
+  }));
+
   // Mark points for exits and images
   const markPoints = data.series.flatMap((p) => {
     const points: any[] = [];
@@ -150,7 +163,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       nameGap: 30,
       axisLabel: { color: "#4B5563" },
       axisLine: { lineStyle: { color: "#9CA3AF" } },
-      interval: 20,
+      splitLine: { show: false },
     },
     yAxis: {
       type: "value",
@@ -173,10 +186,11 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
         lineStyle: { color: "#34D399", width: 2 },
         itemStyle: { color: "#34D399" },
         areaStyle: { color: "rgba(52, 211, 153, 0.2)" },
-        markArea: { 
-          data: markAreas, 
-          silent: true 
+        markArea: {
+          data: markAreas,
+          silent: true
         },
+        markLine: { data: markLines, silent: true, symbol: "none" },
         markPoint: { data: markPoints },
       },
     ],
