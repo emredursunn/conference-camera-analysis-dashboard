@@ -43,9 +43,9 @@ Toplantı boyunca katılımcıların yaşadığı duyguların zaman içerisindek
     Section bazlı konuşulan konular:
 
     [
-      { section: "Section 1", start_min: 0, end_min: 20, topic: "Project Kickoff & Role Assignment" },
-      { section: "Section 2", start_min: 20, end_min: 40, topic: "Technical Details & Timeline" },
-      { section: "Section 3", start_min: 40, end_min: 60, topic: "Client Expectations & QA" }
+      { section: "Section 1", start_min: 0, end_min: 15, topic: "Project Kickoff & Role Assignment" },
+      { section: "Section 2", start_min: 15, end_min: 35, topic: "Technical Details & Timeline" },
+      { section: "Section 3", start_min: 35, end_min: 60, topic: "Client Expectations & QA" }
     ]
 
 🔹 Dummy Veri Örneği:
@@ -72,9 +72,9 @@ export const emotionOverTime = {
     { minute: 45, type: "photo", image: "/images/peak-sec2.jpg" }
   ],
   sections: [
-    { section: "Section 1", start: 0, end: 20, topic: "Project Kickoff & Role Assignment" },
-    { section: "Section 2", start: 20, end: 40, topic: "Technical Details & Timeline" },
-    { section: "Section 3", start: 40, end: 60, topic: "Client Expectations & QA" }
+    { section: "Section 1", start: 0, end: 15, topic: "Project Kickoff & Role Assignment" },
+    { section: "Section 2", start: 15, end: 35, topic: "Technical Details & Timeline" },
+    { section: "Section 3", start: 35, end: 60, topic: "Client Expectations & QA" }
   ]
 };
 

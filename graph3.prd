@@ -43,11 +43,11 @@ Toplantının farklı bölümlerinde (section) katılımcıların dikkat seviyes
 Section ve Konular:
 
 export const attentionSections = [
-  { id: "sec1", title: "Project Overview", start_min: 0, end_min: 10 },
-  { id: "sec2", title: "Sprint Planning", start_min: 10, end_min: 20 },
-  { id: "sec3", title: "Bug Discussion", start_min: 20, end_min: 30 },
-  { id: "sec4", title: "Client Feedback", start_min: 30, end_min: 40 },
-  { id: "sec5", title: "Team Allocation", start_min: 40, end_min: 50 },
+  { id: "sec1", title: "Project Overview", start_min: 0, end_min: 8 },
+  { id: "sec2", title: "Sprint Planning", start_min: 8, end_min: 18 },
+  { id: "sec3", title: "Bug Discussion", start_min: 18, end_min: 30 },
+  { id: "sec4", title: "Client Feedback", start_min: 30, end_min: 38 },
+  { id: "sec5", title: "Team Allocation", start_min: 38, end_min: 50 },
   { id: "sec6", title: "Next Steps", start_min: 50, end_min: 60 }
 ];
 

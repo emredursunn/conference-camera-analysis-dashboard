@@ -29,18 +29,18 @@ export const attendanceTimeline = {
     {
       section: "Bölüm 1",
       start: 0,
-      end: 20,
+      end: 15,
       topic: "Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı",
     },
     {
       section: "Bölüm 2",
-      start: 20,
-      end: 40,
+      start: 15,
+      end: 35,
       topic: "Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar",
     },
     {
       section: "Bölüm 3",
-      start: 40,
+      start: 35,
       end: 60,
       topic: "Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru",
     },
