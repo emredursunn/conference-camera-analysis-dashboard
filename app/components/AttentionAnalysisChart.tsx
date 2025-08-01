@@ -117,7 +117,7 @@ const AttentionAnalysisChart: FC<Props> = ({
       text: "Section-wise Average Attention",
       left: "center",
       top: 5,
-      textStyle: { color: "#E5E7EB", fontSize: 16, fontWeight: "600" },
+      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
     },
     tooltip: {
       trigger: "axis",
@@ -132,19 +132,19 @@ const AttentionAnalysisChart: FC<Props> = ({
     xAxis: {
       type: "category",
       data: summary.map((s) => sections.find(sec => sec.id === s.section)?.title || s.section),
-      axisLabel: { 
-        color: "#D1D5DB", 
+      axisLabel: {
+        color: "#4B5563",
         interval: 0, 
         alignText: "center",
         formatter: (value: string) => value.replace(/\s+/g, "\n"), // <-- satır sonu ekle
       },
-      axisLine: { lineStyle: { color: "#4B5563" } },
+      axisLine: { lineStyle: { color: "#9CA3AF" } },
     },
     yAxis: {
       type: "value",
       max: 100,
-      axisLabel: { color: "#9CA3AF", formatter: "{value}%" },
-      splitLine: { lineStyle: { color: "#374151" } },
+      axisLabel: { color: "#4B5563", formatter: "{value}%" },
+      splitLine: { lineStyle: { color: "#E5E7EB" } },
     },
     series: [
       {
@@ -195,7 +195,7 @@ const AttentionAnalysisChart: FC<Props> = ({
         text: `Attention Trend: ${sections.find((s) => s.id === selectedSec)?.title}`,
         left: "center",
         top: 5,
-        textStyle: { color: "#E5E7EB", fontSize: 16, fontWeight: "600" },
+        textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
       },
       tooltip: { trigger: "axis" },
       grid: { top: "18%", bottom: "10%", left: "10%", right: "5%" },
@@ -204,14 +204,14 @@ const AttentionAnalysisChart: FC<Props> = ({
         name: "Time (seconds)",
         nameLocation: "middle",
         nameGap: 25,
-        axisLabel: { color: "#D1D5DB" },
-        axisLine: { lineStyle: { color: "#4B5563" } },
+        axisLabel: { color: "#4B5563" },
+        axisLine: { lineStyle: { color: "#9CA3AF" } },
       },
       yAxis: {
         type: "value",
         max: 100,
-        axisLabel: { color: "#9CA3AF", formatter: "{value}%" },
-        splitLine: { lineStyle: { color: "#374151" } },
+        axisLabel: { color: "#4B5563", formatter: "{value}%" },
+        splitLine: { lineStyle: { color: "#E5E7EB" } },
       },
       series: [
         {
@@ -264,7 +264,7 @@ const AttentionAnalysisChart: FC<Props> = ({
                 style={{ width: "100%", height }}
                 onEvents={{ click: onLineClick }}
               />
-              <div className="flex justify-center items-center gap-x-6 gap-y-2 flex-wrap mt-4 text-xs text-gray-400">
+              <div className="flex justify-center items-center gap-x-6 gap-y-2 flex-wrap mt-4 text-xs text-gray-600">
                 {incidentStats && (
                   <>
                     <span className="flex items-center gap-1.5">
@@ -284,7 +284,7 @@ const AttentionAnalysisChart: FC<Props> = ({
               </div>
             </div>
           ) : (
-            <div className="flex items-center justify-center h-full text-gray-500 rounded-lg bg-gray-800/30">
+            <div className="flex items-center justify-center h-full text-gray-500 rounded-lg bg-gray-100">
               <p className="text-center text-sm">
                 Select a section from the chart
                 <br />

@@ -51,7 +51,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       xAxis: s.start,
       yAxis: 0,
       itemStyle: {
-        color: index % 2 === 0 ? "rgba(107, 114, 128, 0.1)" : "rgba(107, 114, 128, 0.15)",
+        color: index % 2 === 0 ? "rgba(203, 213, 225, 0.15)" : "rgba(203, 213, 225, 0.25)",
       },
     },
     {
@@ -60,7 +60,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       label: {
         show: true,
         position: "insideTop",
-        color: "#9CA3AF",
+        color: "#4B5563",
         padding: 10,
         fontSize: 12,
         formatter: `${s.section}: ${s.topic}`,
@@ -112,7 +112,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       text: "Attendance Trend, Exits & Meeting Sections",
       left: "center",
       top: 5,
-      textStyle: { color: "#E5E7EB", fontSize: 16, fontWeight: "600" },
+      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
     },
     tooltip: {
       trigger: "axis",
@@ -132,8 +132,8 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       name: "Time (minutes)",
       nameLocation: "middle",
       nameGap: 30,
-      axisLabel: { color: "#9CA3AF" },
-      axisLine: { lineStyle: { color: "#6B7280" } },
+      axisLabel: { color: "#4B5563" },
+      axisLine: { lineStyle: { color: "#9CA3AF" } },
       interval: 20,
     },
     yAxis: {
@@ -143,8 +143,8 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       name: "Participants",
       nameLocation: "middle",
       nameGap: 35,
-      axisLabel: { color: "#9CA3AF" },
-      splitLine: { lineStyle: { color: "#374151" } },
+      axisLabel: { color: "#4B5563" },
+      splitLine: { lineStyle: { color: "#E5E7EB" } },
     },
     series: [
       {
