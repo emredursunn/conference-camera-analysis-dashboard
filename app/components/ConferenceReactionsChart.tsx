@@ -269,7 +269,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       textStyle: {
         fontSize: 18,
         fontWeight: 'bold',
-        color:'white'
+        color:'#374151'
       },
     },
     tooltip: {
@@ -288,7 +288,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       data: ['Laughter', 'Applause'],
       top: 50,
       itemGap: 30,
-      textStyle: { color: '#D1D5DB', fontSize: 12 },
+      textStyle: { color: '#4B5563', fontSize: 12 },
     },
     grid: {
       left: '10%',
@@ -303,6 +303,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       nameLocation: 'middle',
       nameGap: 30,
       axisLabel: {
+        color: '#4B5563',
         formatter: function(value: number) {
           const minutes = Math.floor(value / 60);
           const seconds = Math.floor(value % 60);
@@ -313,7 +314,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
         show: true,
         lineStyle: {
           type: 'dashed',
-          color: '#e0e0e0'
+          color: '#E5E7EB'
         }
       }
     },
@@ -325,6 +326,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       min: 0,
       max: 1,
       axisLabel: {
+        color: '#4B5563',
         formatter: function(value: number) {
           return `${(value * 100).toFixed(0)}%`;
         }
@@ -333,7 +335,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
         show: true,
         lineStyle: {
           type: 'dashed',
-          color: '#e0e0e0'
+          color: '#E5E7EB'
         }
       }
     },
@@ -391,7 +393,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
         style={{ width, height }}
         opts={{ renderer: 'canvas' }}
       />
-      <div className="mt-4 text-sm text-white/50 text-center">
+      <div className="mt-4 text-sm text-gray-600 text-center">
         <p>Bubble size represents confidence level. Hover over points for detailed information.</p>
       </div>
     </div>

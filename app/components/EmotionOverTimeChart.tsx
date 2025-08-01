@@ -89,10 +89,10 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
       show: true,
       position: 'insideEndTop',
       formatter: s.section,
-      color: '#E5E7EB',
+      color: '#374151',
       fontSize: 12,
       fontWeight: 'bold',
-      backgroundColor: '#374151',
+      backgroundColor: '#E5E7EB',
       padding: [4, 6],
       borderRadius: 4,
     },
@@ -104,25 +104,25 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
       text: 'Zamana Göre Genel Toplantı Duygu Akışı',
       left: 'center',
       top: 10,
-      textStyle: { color: '#F3F4F6', fontSize: 18, fontWeight: '600' },
+      textStyle: { color: '#374151', fontSize: 18, fontWeight: '600' },
     },
     tooltip: {
       trigger: 'axis',
-      backgroundColor: 'rgba(17, 24, 39, 0.9)',
-      borderColor: '#374151',
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      borderColor: '#E5E7EB',
       borderWidth: 1,
-      axisPointer: { type: 'cross', label: { backgroundColor: '#6B7280' } },
+      axisPointer: { type: 'cross', label: { backgroundColor: '#9CA3AF' } },
       formatter: (params: any[]) => {
         if (!params || !params.length) return '';
         const minute = params[0].axisValue;
-        let html = `<div style='font-weight:600;margin-bottom:8px;color:#F3F4F6;'>Zaman: ${minute} dakika</div>`;
-        html += '<div style="margin-bottom:4px;color:#D1D5DB;font-size:13px;font-weight:500;">Duygular:</div>';
+        let html = `<div style='font-weight:600;margin-bottom:8px;color:#374151;'>Zaman: ${minute} dakika</div>`;
+        html += '<div style="margin-bottom:4px;color:#4B5563;font-size:13px;font-weight:500;">Duygular:</div>';
         params
           .filter((p) => p.value > 0)
           .sort((a, b) => b.value - a.value)
           .forEach((p) => {
             const percentage = (p.value * 100).toFixed(1);
-            html += `<div style='margin:2px 0;'><span style='display:inline-block;width:12px;height:12px;border-radius:2px;background:${COLORS[p.seriesName]};margin-right:8px;'></span><span style='color:#F3F4F6;'>${p.seriesName}:</span> <b style='color:#34D399;'>${percentage}%</b></div>`;
+            html += `<div style='margin:2px 0;'><span style='display:inline-block;width:12px;height:12px;border-radius:2px;background:${COLORS[p.seriesName]};margin-right:8px;'></span><span style='color:#374151;'>${p.seriesName}:</span> <b style='color:#34D399;'>${percentage}%</b></div>`;
           });
         return html;
       },
@@ -130,7 +130,7 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
     legend: {
       data: activeEmotions,
       top: 45,
-      textStyle: { color: '#D1D5DB', fontSize: 12 },
+      textStyle: { color: '#4B5563', fontSize: 12 },
       itemWidth: 14,
       itemHeight: 14,
       icon: 'roundRect',
@@ -144,9 +144,9 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
       name: 'Zaman (dakika)',
       nameLocation: 'middle',
       nameGap: 25,
-      nameTextStyle: { color: '#9CA3AF', fontSize: 12 },
-      axisLabel: { color: '#9CA3AF', fontSize: 11 },
-      axisLine: { lineStyle: { color: '#4B5563' } },
+      nameTextStyle: { color: '#4B5563', fontSize: 12 },
+      axisLabel: { color: '#4B5563', fontSize: 11 },
+      axisLine: { lineStyle: { color: '#9CA3AF' } },
       splitLine: { show: false },
     },
     yAxis: {
@@ -156,13 +156,13 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
       name: 'Duygu Şiddeti',
       nameLocation: 'middle',
       nameGap: 40,
-      nameTextStyle: { color: '#9CA3AF', fontSize: 12 },
+      nameTextStyle: { color: '#4B5563', fontSize: 12 },
       axisLabel: {
-        color: '#9CA3AF',
+        color: '#4B5563',
         fontSize: 11,
         formatter: (value: number) => `${(value * 100).toFixed(0)}%`,
       },
-      splitLine: { lineStyle: { color: '#374151', type: 'solid', opacity: 0.3 } },
+      splitLine: { lineStyle: { color: '#E5E7EB', type: 'solid', opacity: 0.3 } },
     },
     series,
   };
@@ -181,21 +181,21 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
         />
       </div>
       <div className='w-72 m-auto p-4 flex flex-col'>
-        <h3 className='text-base font-semibold text-gray-200 mb-3 border-b border-gray-600 pb-2'>
+        <h3 className='text-base font-semibold text-gray-700 mb-3 border-b border-gray-300 pb-2'>
           Toplantı Bölümleri
         </h3>
         <div className='space-y-3 overflow-y-auto'>
           {data.sections.map((section, index) => (
-            <div key={index} className='bg-gray-800/50 rounded-lg p-3'>
+            <div key={index} className='bg-gray-50 rounded-lg p-3'>
               <div className='flex items-center justify-between mb-1'>
-                <h4 className='font-medium text-gray-200 text-sm'>
+                <h4 className='font-medium text-gray-700 text-sm'>
                   {section.section}
                 </h4>
-                <span className='text-xs text-gray-400 bg-gray-700/50 px-2 py-0.5 rounded'>
+                <span className='text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded'>
                   {section.start}-{section.end} dk
                 </span>
               </div>
-              <p className='text-gray-400 text-xs leading-relaxed'>
+              <p className='text-gray-600 text-xs leading-relaxed'>
                 {section.topic}
               </p>
             </div>

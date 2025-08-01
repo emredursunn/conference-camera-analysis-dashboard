@@ -52,7 +52,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
       text: "Overall Emotion Distribution in Meeting",
       left: "center",
       top: 10,
-      textStyle: { color: "#E5E7EB", fontSize: 16 },
+      textStyle: { color: "#374151", fontSize: 16 },
     },
     tooltip: {
       trigger: "item",
@@ -63,7 +63,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
       left: "center",
       itemWidth: 14,
       itemHeight: 14,
-      textStyle: { color: "#F3F4F6", fontSize: 12 },
+      textStyle: { color: "#4B5563", fontSize: 12 },
       data: data.map((d) => d.emotion),
     },
     series: [
@@ -82,7 +82,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
             fontSize: 14,
             fontWeight: "bold",
             formatter: "{b}\n{d}%",
-            color: "#F3F4F6",
+            color: "#374151",
           },
         },
         labelLine: {

@@ -88,17 +88,17 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
       text: "VIP Emotion Profile",
       left: "center",
       top: 5,
-      textStyle: { color: "#E5E7EB", fontSize: 16, fontWeight: "600" },
+      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
     },
     tooltip: {
       trigger: "item",
-      className: "rounded-lg bg-gray-800/90 border-gray-700 text-gray-200",
+      className: "rounded-lg bg-white border-gray-200 text-gray-700",
       borderWidth: 1,
     },
     legend: {
       data: selected,
       top: 40,
-      textStyle: { color: "#D1D5DB" },
+      textStyle: { color: "#4B5563" },
       itemWidth: 12,
       itemHeight: 12,
       icon: "circle",
@@ -107,7 +107,7 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
       indicator: indicators,
       center: ["50%", "60%"],
       radius: "65%",
-      axisName: { color: "#D1D5DB", fontSize: 11, padding: 4 },
+      axisName: { color: "#4B5563", fontSize: 11, padding: 4 },
       splitLine: { lineStyle: { color: "rgba(107, 114, 128, 0.3)" } },
       splitArea: {
         areaStyle: {
@@ -134,7 +134,7 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
   return (
     <div className="rounded-xl p-4 h-full flex flex-col">
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-        <span className="text-gray-200 text-sm font-medium shrink-0">Select VIP(s) (Max 3):</span>
+        <span className="text-gray-700 text-sm font-medium shrink-0">Select VIP(s) (Max 3):</span>
         <div className="flex flex-wrap gap-2">
           {names.map((name) => (
             <button
@@ -144,7 +144,7 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
               className={`px-3 py-1 text-xs rounded-full transition-all duration-200 ease-in-out border ${
                 selected.includes(name)
                   ? "bg-blue-600 text-white font-semibold border-blue-500 shadow-md"
-                  : "bg-gray-700/50 text-gray-300 hover:bg-gray-600/70 border-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
               }`}
             >
               {name}
