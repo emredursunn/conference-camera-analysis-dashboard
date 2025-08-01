@@ -5,52 +5,29 @@ import { useRouter } from "next/navigation";
 const conferences = [
   {
     id: 1,
-    name: "Tech Conference 2025",
-    summary: {
-      "Key Talking Points": [
-        "The future of AI in enterprise applications.",
-        "Scaling microservices for high-demand systems.",
-        "Cybersecurity trends and proactive defense strategies.",
-      ],
-      "Decisions & Action Items": [
-        "Invest in a dedicated AI research team.",
-        "Adopt a new container orchestration platform.",
-        "Schedule mandatory security training for all developers.",
-      ],
-    },
+    name: "NVIDIA Keynote 2025",
+    sections: [
+      {
+        title: "Bölüm 1: Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı",
+        text:
+          "İlk bölümde, NVIDIA olarak dönüşüm yolculuğunuzu anlattınız. Tek bir çipten başlayarak, bu çiplerle kurduğunuz sistemlere, oradan veri merkezlerine ve nihayetinde devasa bir yapay zeka altyapısına nasıl ulaştığınızı adım adım gösterdiniz. Bu sunumla, tekil bir bileşen üreticisinden bütünsel bir \"Yapay Zeka Fabrikası\" kurucusuna nasıl evrildiğinizi vurguladınız.",
+      },
+      {
+        title:
+          "Bölüm 2: Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar",
+        text:
+          "İkinci bölümde, trilyon dolarlık küresel pazarı hedefleyen Kurumsal Yapay Zeka Platformunuzu tanıttınız. Bu platformun sadece yapay zeka altyapısı (donanım) ile sınırlı kalmadığını; CUDA-X, NeMo, Omniverse gibi kritik yazılım katmanlarını da kapsadığını belirttiniz. Accenture ve Deloitte gibi iş ortaklıklarınızla \"Agentic AI\" geliştirerek kurumsal müşterilerinize nasıl uçtan uca çözümler sunduğunuzu vurguladınız.",
+      },
+      {
+        title:
+          "Bölüm 3: Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru",
+        text:
+          "Son bölümde yeni NVIDIA Yapay Zeka Veri Platformunuzun lansmanını yaptınız. Bu platformun gücünü, Blackwell mimarisi üzerine kurulu yeni sunucularınızdan aldığını belirttiniz. Asıl odak noktası olarak, NVIDIA AI-Q adını verdiğiniz yeni nesil yapay zeka muhakeme motorunu tanıttınız. AI-Q'nun yalnızca yanıt vermekle kalmayıp, bir plan oluşturduğunu, hesap makinesi veya veri tabanı gibi harici araçları kullanarak muhakeme yürüttüğünü ve en sonunda akıllı bir yanıt ürettiğini anlattınız. Bu vizyonu hayata geçirmek için Dell, IBM ve NetApp gibi sektör lideri ortaklarınızla olan iş birliklerinize de değindiniz.",
+      },
+    ],
   },
-  {
-    id: 2,
-    name: "Marketing Summit 2025",
-    summary: {
-      "Key Talking Points": [
-        "The impact of social media on brand perception.",
-        "Data-driven approaches to customer segmentation.",
-        "The rise of influencer marketing and its ROI.",
-      ],
-      "Decisions & Action Items": [
-        "Launch a new social media campaign on TikTok.",
-        "Implement a customer data platform (CDP).",
-        "Allocate 15% of the marketing budget to influencers.",
-      ],
-    },
-  },
-  {
-    id: 3,
-    name: "Design Week 2025",
-    summary: {
-      "Key Talking Points": [
-        "The role of ethics in modern product design.",
-        "The latest trends in UI/UX for mobile apps.",
-        "The use of design systems to maintain brand consistency.",
-      ],
-      "Decisions & Action Items": [
-        "Establish an ethics committee for product design.",
-        "Redesign the mobile app with a new UI/UX.",
-        "Develop a comprehensive design system for the company.",
-      ],
-    },
-  },
+  { id: 2, name: "Marketing Summit 2025", sections: [] },
+  { id: 3, name: "Design Week 2025", sections: [] },
 ];
 
 export default function Sidebar() {
@@ -62,20 +39,23 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-96 bg-gray-50 shadow-md flex flex-col p-6">
+    <div className="w-[28rem] bg-gray-50 shadow-md flex flex-col p-6">
       <div>
         <h2 className="text-xl font-bold text-gray-900">Conferences</h2>
         <ul className="mt-4 space-y-2">
-          {conferences.map((conference) => (
+          {conferences.map((conference, idx) => (
             <li key={conference.id}>
               <button
-                onClick={() => setSelectedConference(conference)}
-                className={`w-full text-left px-4 py-2 rounded-md text-sm font-medium ${
+                onClick={() => idx === 0 && setSelectedConference(conference)}
+                disabled={idx !== 0}
+                className={`w-full flex items-center text-left px-4 py-2 rounded-md text-sm font-medium ${
                   selectedConference.id === conference.id
                     ? "bg-indigo-600 text-white shadow-sm"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}>
+                    : "text-gray-700"
+                } ${idx !== 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-100"}`}
+              >
                 {conference.name}
+                {idx !== 0 && <span className="ml-2 text-gray-400">🔒</span>}
               </button>
             </li>
           ))}
@@ -83,17 +63,13 @@ export default function Sidebar() {
 
         <div className="mt-8 pt-6 border-t border-gray-200">
           <h3 className="text-lg font-bold text-gray-900">
-            {selectedConference.name} Summary
+            {selectedConference.name} Bölümleri
           </h3>
           <div className="mt-4 space-y-6">
-            {Object.entries(selectedConference.summary).map(([section, points]) => (
-              <div key={section}>
-                <h4 className="font-semibold text-gray-600">{section}</h4>
-                <ul className="mt-2 space-y-2 text-sm text-gray-500 list-disc list-inside">
-                  {points.map((point, index) => (
-                    <li key={index}>{point}</li>
-                  ))}
-                </ul>
+            {selectedConference.sections.map((sec, index) => (
+              <div key={index}>
+                <h4 className="font-semibold text-gray-600 mb-1">{sec.title}</h4>
+                <p className="text-sm text-gray-500 leading-relaxed">{sec.text}</p>
               </div>
             ))}
           </div>

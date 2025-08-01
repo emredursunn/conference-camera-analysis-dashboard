@@ -6,21 +6,30 @@ import type { FC } from "react";
 
 // ------------------ Dummy Data ------------------ //
 export const attentionSections = [
-  { id: "sec1", title: "Project Overview", start_min: 0, end_min: 10 },
-  { id: "sec2", title: "Sprint Planning", start_min: 10, end_min: 20 },
-  { id: "sec3", title: "Bug Discussion", start_min: 20, end_min: 30 },
-  { id: "sec4", title: "Client Feedback", start_min: 30, end_min: 40 },
-  { id: "sec5", title: "Team Allocation", start_min: 40, end_min: 50 },
-  { id: "sec6", title: "Next Steps", start_min: 50, end_min: 60 },
+  {
+    id: "sec1",
+    title: "Bölüm 1: Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı",
+    start_min: 0,
+    end_min: 20,
+  },
+  {
+    id: "sec2",
+    title: "Bölüm 2: Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar",
+    start_min: 20,
+    end_min: 40,
+  },
+  {
+    id: "sec3",
+    title: "Bölüm 3: Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru",
+    start_min: 40,
+    end_min: 60,
+  },
 ];
 
 export const sectionAttentionSummary = [
   { section: "sec1", avg_attention: 72 },
   { section: "sec2", avg_attention: 85 },
   { section: "sec3", avg_attention: 66 },
-  { section: "sec4", avg_attention: 54 },
-  { section: "sec5", avg_attention: 61 },
-  { section: "sec6", avg_attention: 78 },
 ];
 
 export const attentionDrilldown = {
@@ -58,35 +67,6 @@ export const attentionDrilldown = {
       { second: 160, type: "sleep", user: "jane@example.com" },
       { second: 310, type: "sleep", user: "doe@example.com" },
     ],
-  },
-  sec4: {
-    points: [
-      { second: 0, attention: 54 },
-      { second: 100, attention: 45 },
-      { second: 200, attention: 50 },
-      { second: 300, attention: 60 },
-      { second: 400, attention: 58 },
-    ],
-    incidents: [{ second: 110, type: "phone", user: "peter@example.com" }],
-  },
-  sec5: {
-    points: [
-      { second: 0, attention: 61 },
-      { second: 120, attention: 68 },
-      { second: 240, attention: 75 },
-      { second: 360, attention: 65 },
-    ],
-    incidents: [],
-  },
-  sec6: {
-    points: [
-      { second: 0, attention: 78 },
-      { second: 100, attention: 85 },
-      { second: 200, attention: 88, image: "/images/peak-sec2.png" },
-      { second: 300, attention: 82 },
-      { second: 400, attention: 79 },
-    ],
-    incidents: [{ second: 310, type: "phone", user: "sara@example.com" }],
   },
 };
 

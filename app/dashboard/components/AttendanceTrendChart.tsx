@@ -26,9 +26,24 @@ export const attendanceTimeline = {
     { minute: 60, participants: 7 },
   ],
   sections: [
-    { section: "Section 1", start: 0, end: 20, topic: "Strategy Kickoff" },
-    { section: "Section 2", start: 20, end: 40, topic: "Budget Review" },
-    { section: "Section 3", start: 40, end: 60, topic: "Action Items & Wrap-up" },
+    {
+      section: "Bölüm 1",
+      start: 0,
+      end: 20,
+      topic: "Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı",
+    },
+    {
+      section: "Bölüm 2",
+      start: 20,
+      end: 40,
+      topic: "Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar",
+    },
+    {
+      section: "Bölüm 3",
+      start: 40,
+      end: 60,
+      topic: "Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru",
+    },
   ],
 };
 
@@ -109,7 +124,7 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
   const option: any = {
     backgroundColor: "transparent",
     title: {
-      text: "Attendance Trend, Exits & Meeting Sections",
+      text: "Attendance Trend & Conference Sections",
       left: "center",
       top: 5,
       textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },

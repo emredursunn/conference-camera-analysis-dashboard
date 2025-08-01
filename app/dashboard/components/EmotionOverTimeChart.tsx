@@ -31,9 +31,24 @@ export const demoEmotionOverTime = {
     { minute: 45, type: 'photo', image: '/images/peak-sec.png' },
   ],
   sections: [
-    { section: 'Section 1', start: 0, end: 20, topic: 'Project Kickoff & Role Assignment' },
-    { section: 'Section 2', start: 20, end: 40, topic: 'Technical Details & Timeline' },
-    { section: 'Section 3', start: 40, end: 60, topic: 'Client Expectations & QA' },
+    {
+      section: 'Bölüm 1',
+      start: 0,
+      end: 20,
+      topic: 'Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı',
+    },
+    {
+      section: 'Bölüm 2',
+      start: 20,
+      end: 40,
+      topic: 'Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar',
+    },
+    {
+      section: 'Bölüm 3',
+      start: 40,
+      end: 60,
+      topic: 'Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru',
+    },
   ],
 };
 
