@@ -172,10 +172,10 @@ const AttentionAnalysisChart: FC<Props> = ({
     return {
       backgroundColor: "transparent",
       title: {
-        text: `Attention Trend: ${sections.find((s) => s.id === selectedSec)?.title}`,
+        text: `Attention Trend\n\n${sections.find((s) => s.id === selectedSec)?.title}`,
         left: "center",
         top: 5,
-        textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
+        textStyle: { color: "#374151", fontSize: 16, fontWeight: "600",alignText:"center" },
       },
       tooltip: { trigger: "axis" },
       grid: { top: "18%", bottom: "10%", left: "10%", right: "5%" },
