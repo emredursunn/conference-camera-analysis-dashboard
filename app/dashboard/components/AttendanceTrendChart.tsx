@@ -74,11 +74,12 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       yAxis: maxY,
       label: {
         show: true,
-        position: "insideTop",
+        position: "top",
         color: "#4B5563",
         padding: 10,
         fontSize: 12,
-        formatter: `${s.section}: ${s.topic}`,
+        alignText: "center",
+        formatter: `${s.topic}`,
       },
     },
   ]);
