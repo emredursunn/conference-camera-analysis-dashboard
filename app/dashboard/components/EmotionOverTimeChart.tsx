@@ -28,7 +28,7 @@ export const demoEmotionOverTime = {
   annotations: [
     { minute: 10, type: 'laugh' },
     { minute: 30, type: 'clap' },
-    { minute: 45, type: 'photo', image: '/images/peak-sec2.jpg' },
+    { minute: 45, type: 'photo', image: '/images/peak-sec.png' },
   ],
   sections: [
     { section: 'Section 1', start: 0, end: 20, topic: 'Project Kickoff & Role Assignment' },

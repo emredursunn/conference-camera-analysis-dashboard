@@ -39,7 +39,7 @@ export const attentionDrilldown = {
       { second: 0, attention: 80 },
       { second: 60, attention: 76 },
       { second: 120, attention: 85 },
-      { second: 180, attention: 91, image: "/images/peak-sec2.jpg" },
+      { second: 180, attention: 91, image: "/images/peak-sec3.png" },
       { second: 240, attention: 87 },
     ],
     incidents: [
@@ -82,7 +82,7 @@ export const attentionDrilldown = {
     points: [
       { second: 0, attention: 78 },
       { second: 100, attention: 85 },
-      { second: 200, attention: 88, image: "/images/peak-sec2.jpg" },
+      { second: 200, attention: 88, image: "/images/peak-sec2.png" },
       { second: 300, attention: 82 },
       { second: 400, attention: 79 },
     ],
