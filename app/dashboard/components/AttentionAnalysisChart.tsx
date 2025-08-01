@@ -10,18 +10,18 @@ export const attentionSections = [
     id: "sec1",
     title: "Bölüm 1: Dönüşüm: Tekil Çipten Yapay Zeka Altyapısı",
     start_min: 0,
-    end_min: 20,
+    end_min: 15,
   },
   {
     id: "sec2",
     title: "Bölüm 2: Kurumsal Yapay Zeka Platformu ve Trilyon Dolarlık Pazar",
-    start_min: 20,
-    end_min: 40,
+    start_min: 15,
+    end_min: 35,
   },
   {
     id: "sec3",
     title: "Bölüm 3: Yeni Yapay Zeka Veri Platformu ve Akıllı Muhakeme Motoru",
-    start_min: 40,
+    start_min: 35,
     end_min: 60,
   },
 ];

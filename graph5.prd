@@ -53,9 +53,9 @@ export const attendanceTimeline = {
     { minute: 60, participants: 7 }
   ],
   sections: [
-    { section: "Section 1", start: 0, end: 20, topic: "Strategy Kickoff" },
-    { section: "Section 2", start: 20, end: 40, topic: "Budget Review" },
-    { section: "Section 3", start: 40, end: 60, topic: "Action Items & Wrap-up" }
+    { section: "Section 1", start: 0, end: 15, topic: "Strategy Kickoff" },
+    { section: "Section 2", start: 15, end: 35, topic: "Budget Review" },
+    { section: "Section 3", start: 35, end: 60, topic: "Action Items & Wrap-up" }
   ]
 };
 
