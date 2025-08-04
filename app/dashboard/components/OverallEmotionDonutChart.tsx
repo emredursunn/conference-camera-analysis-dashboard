@@ -65,6 +65,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
       itemHeight: 14,
       textStyle: { color: "#4B5563", fontSize: 12 },
       data: data.map((d) => d.emotion),
+      selectedMode: false, // Disable category selection
     },
     series: [
       {
@@ -79,10 +80,11 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
         emphasis: {
           label: {
             show: true,
-            fontSize: 14,
+            fontSize: 20,
             fontWeight: "bold",
             formatter: "{b}\n{d}%",
             color: "#374151",
+            lineHeight: 28,
           },
         },
         labelLine: {
