@@ -154,15 +154,38 @@ const AttentionAnalysisChart: FC<Props> = ({
           name: "Peak Moment",
           xAxis: p.second,
           yAxis: p.attention,
-          symbol: "image://" + p.image,
-          symbolSize: [40, 40],
+          symbol: "circle",
+          symbolSize: 32,
           symbolOffset: [0, -20],
           itemStyle: {
-            borderColor: peakColor,
-            borderWidth: 2,
+            color: "#4CC9F0",
+            borderColor: "#FFFFFF",
+            borderWidth: 3,
+            shadowColor: "rgba(76, 201, 240, 0.4)",
+            shadowBlur: 8,
+            shadowOffsetY: 2
+          },
+          label: {
+            show: true,
+            formatter: "📷",
+            fontSize: 14,
+            color: "#FFFFFF",
+            fontWeight: "bold",
+            position: "inside"
+          },
+          emphasis: {
+            itemStyle: {
+              color: "#F72585",
+              borderColor: "#FFFFFF",
+              borderWidth: 4,
+              shadowColor: "rgba(247, 37, 133, 0.6)",
+              shadowBlur: 12,
+              shadowOffsetY: 3,
+              scale: 1.2
+            }
           },
           tooltip: {
-            formatter: "Peak attention moment<br/>Click to view image",
+            formatter: "📷 Peak Attention Moment<br/>Click to view photo",
           },
           isImage: true,
           imageUrl: p.image,

@@ -3,8 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f7f8fa;
   --foreground: #171717;
+  --logo-gradient: linear-gradient(120deg, #F72585 0%, #7209B7 40%, #4361EE 70%, #4CC9F0 100%);
+  --card-shadow: 0 4px 24px 0 rgba(67,97,238,0.08);
+  --card-border: #4CC9F0;
+  --header-bg: linear-gradient(90deg, #F72585 0%, #7209B7 60%, #4CC9F0 100%);
+}
+
+.company-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--logo-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px 0 rgba(114,9,183,0.13);
+  margin-right: 1rem;
+}
+
+.header-gradient {
+  background: var(--header-bg);
+  color: #fff;
+}
+
+.footer-gradient {
+  background: var(--header-bg);
+  color: #fff;
+}
+
+.card-modern {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: var(--card-shadow);
+  border: 1.5px solid var(--card-border);
+  padding: 1.5rem;
+}
+
+.card-title {
+  background: var(--logo-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,5 +66,17 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE and Edge */
+    -ms-overflow-style: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    /* Chrome, Safari and Opera */
+    display: none;
   }
 }

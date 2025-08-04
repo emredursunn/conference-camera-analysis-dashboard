@@ -70,6 +70,54 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
     Disgust: '#7C3AED',
   };
 
+  // Responsive width logic
+  const chartContainerRef = React.useRef<HTMLDivElement>(null);
+  const [chartWidth, setChartWidth] = React.useState<number | string>('100%');
+
+  React.useEffect(() => {
+    function handleResize() {
+      if (chartContainerRef.current) {
+        const newWidth = chartContainerRef.current.offsetWidth;
+        if (newWidth !== chartWidth) {
+          setChartWidth(newWidth);
+        }
+      }
+    }
+    
+    // Immediate resize
+    handleResize();
+    
+    // Delayed resize for sidebar transitions
+    const timeoutId = setTimeout(handleResize, 350);
+    
+    // MutationObserver for parent size changes
+    let observer: MutationObserver | null = null;
+    if (chartContainerRef.current && chartContainerRef.current.parentElement) {
+      observer = new MutationObserver(handleResize);
+      observer.observe(chartContainerRef.current.parentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style'],
+        subtree: true
+      });
+    }
+    
+    // ResizeObserver for container size changes
+    let resizeObserver: ResizeObserver | null = null;
+    if (chartContainerRef.current) {
+      resizeObserver = new ResizeObserver(handleResize);
+      resizeObserver.observe(chartContainerRef.current);
+    }
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timeoutId);
+      if (observer) observer.disconnect();
+      if (resizeObserver) resizeObserver.disconnect();
+    };
+  }, [chartWidth]);
+
   const emotions = Object.keys(COLORS);
   const minutes = data.timeline.map((p) => p.minute);
 
@@ -190,10 +238,10 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
 
   return (
     <div className='flex flex-col lg:flex-row h-full w-full '>
-      <div className='flex-grow p-4'>
+      <div ref={chartContainerRef} className="flex-1 min-w-0">
         <ReactECharts
           option={option}
-          style={{ width: '100%', height: `${height}px` }}
+          style={{ width: chartWidth, height: `${height}px` }}
           opts={{ renderer: 'canvas' }}
         />
       </div>

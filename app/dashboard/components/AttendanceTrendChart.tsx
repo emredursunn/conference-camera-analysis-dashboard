@@ -132,11 +132,37 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
       points.push({
         name: "Peak Moment",
         coord: [p.minute, p.participants],
-        symbol: `image://${p.image}`,
-        symbolSize: 30,
+        symbol: "circle",
+        symbolSize: 32,
         symbolOffset: [0, -20],
-        itemStyle: { borderColor: "#34D399", borderWidth: 2 },
-        tooltip: { formatter: "Peak moment<br/>Click to view image" },
+        itemStyle: { 
+          color: "#4CC9F0",
+          borderColor: "#FFFFFF",
+          borderWidth: 3,
+          shadowColor: "rgba(76, 201, 240, 0.4)",
+          shadowBlur: 8,
+          shadowOffsetY: 2
+        },
+        label: {
+          show: true,
+          formatter: "📷",
+          fontSize: 14,
+          color: "#FFFFFF",
+          fontWeight: "bold",
+          position: "inside"
+        },
+        emphasis: {
+          itemStyle: {
+            color: "#F72585",
+            borderColor: "#FFFFFF",
+            borderWidth: 4,
+            shadowColor: "rgba(247, 37, 133, 0.6)",
+            shadowBlur: 12,
+            shadowOffsetY: 3,
+            scale: 1.2
+          }
+        },
+        tooltip: { formatter: "📷 Peak Moment<br/>Click to view photo" },
         isImage: true,
         imageUrl: p.image,
       });
