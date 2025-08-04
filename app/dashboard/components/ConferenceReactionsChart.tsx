@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactECharts from 'echarts-for-react';
 
 // Ses şiddeti verisi (decibel)
@@ -1814,6 +1814,38 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
   width = '100%', 
   height = 500 
 }) => {
+  const chartRef = useRef<any>(null);
+
+  // Handle chart resize when window or container size changes
+  useEffect(() => {
+    const handleResize = () => {
+      if (chartRef.current) {
+        const chartInstance = chartRef.current.getEchartsInstance();
+        if (chartInstance) {
+          chartInstance.resize();
+        }
+      }
+    };
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+    
+    // Also listen for sidebar toggle (using a timeout to allow CSS transitions to complete)
+    const resizeObserver = new ResizeObserver(() => {
+      setTimeout(handleResize, 300); // Wait for CSS transition to complete
+    });
+    
+    const chartContainer = chartRef.current?.ele;
+    if (chartContainer) {
+      resizeObserver.observe(chartContainer.parentElement);
+    }
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   // Convert time string to seconds for easier plotting
   const timeToSeconds = (timeStr: string): number => {
     const [minutes, seconds] = timeStr.split(':').map(Number);
@@ -1869,7 +1901,7 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
   // Process audio level data
   const processedAudioData = audioData.map((item: AudioLevelData) => ({
     time: item.start_time,
-    db: item.average_db
+    db: Math.abs(item.average_db) // Convert negative dB values to positive
   }));
 
   // Separate grouped data by reaction type
@@ -1928,7 +1960,8 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
         
         params.forEach((param: any) => {
           if (param.seriesName === 'Audio Level') {
-            result += `<div style="color: #8B5CF6; margin: 4px 0;">🔊 Audio: <strong>${param.data.toFixed(1)} dB</strong></div>`;
+            const dbValue = Array.isArray(param.data) ? param.data[1] : param.data;
+            result += `<div style="color: #8B5CF6; margin: 4px 0;">🔊 Audio: <strong>${dbValue.toFixed(1)} dB</strong></div>`;
           } else if (param.seriesName === 'Laughter') {
             const [time, confidence, timeStr, totalReactions] = param.data;
             result += `<div style="color: #F59E0B; margin: 4px 0;">😄 Laughter: <strong>${(confidence * 100).toFixed(1)}%</strong></div>`;
@@ -2214,8 +2247,9 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
   return (
     <div className="w-full bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
       <ReactECharts 
+        ref={chartRef}
         option={option} 
-        style={{ width, height }}
+        style={{ width: '100%', height }}
         opts={{ renderer: 'canvas', devicePixelRatio: 2 }}
       />
       <div className="px-6 pb-6">
