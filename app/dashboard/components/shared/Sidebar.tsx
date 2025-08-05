@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 const conferences = [
   {
@@ -37,10 +36,7 @@ interface SidebarProps {
 
 export default function Sidebar({ open, onToggle }: SidebarProps) {
   const [selectedConference, setSelectedConference] = useState(conferences[0]);
-  const router = useRouter();
-
-
-
+  
   return (
     <div
       className={`relative md:fixed md:top-0 md:left-0 md:h-screen shadow-xl flex flex-col mb-4 md:mb-0 transition-all duration-300 ease-in-out
