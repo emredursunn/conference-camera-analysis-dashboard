@@ -88,7 +88,6 @@ const AttentionAnalysisChart: FC<Props> = ({
 
   // ------------ Colors & Icons ------------ //
   const barColor = "#60A5FA";
-  const peakColor = "#34D399";
 
   // ------------ Bar Chart Option ------------ //
   const barOption: any = {

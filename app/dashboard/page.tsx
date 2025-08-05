@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import AttendanceTrendChart from "./components/AttendanceTrendChart";
 import AttentionAnalysisChart from "./components/AttentionAnalysisChart";
 import OverallEmotionDonutChart from "./components/OverallEmotionDonutChart";
@@ -42,9 +43,11 @@ const ProfileMenu = () => {
         onClick={() => setOpen((v) => !v)}
         aria-label="Profil Menüsü"
       >
-        <img
+        <Image
           src={user.avatar}
           alt={user.name}
+          width={36}
+          height={36}
           className="w-9 h-9 rounded-full border-2 border-logoBlue object-cover"
         />
         <div className="text-left hidden md:block">
@@ -74,6 +77,7 @@ const ProfileMenu = () => {
 // --- ANA DASHBOARD BILEŞENİ ---
 const App = () => {
   const [isClient, setIsClient] = useState(false);
+  const sidebarOpen = useContext(SidebarOpenContext);
 
   useEffect(() => {
     setIsClient(true);
@@ -86,7 +90,7 @@ const App = () => {
       {/* Header */}
       <header className="header-gradient flex items-center px-2 md:px-4 py-6 mb-10 shadow-xl relative rounded-b-3xl mx-2 md:mx-4">
         <div className="company-logo">
-          <img src="/images/logo.png" alt="Company Logo" style={{ width: 44, height: 44 }} />
+          <Image src="/images/logo.png" alt="Company Logo" width={44} height={44} />
         </div>
         <div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">Aurora Camera Analysis</h1>
@@ -126,7 +130,7 @@ const App = () => {
         <div className="card-modern w-full min-w-0 overflow-x-auto p-2 md:p-4">
           <div className="card-title text-2xl mb-2">Duygu Zaman Çizgisi</div>
           <div className="min-w-0">
-            <EmotionOverTimeChart key={useContext(SidebarOpenContext) ? 'open' : 'closed'} />
+            <EmotionOverTimeChart key={sidebarOpen ? 'open' : 'closed'} />
           </div>
         </div>
 
@@ -140,7 +144,7 @@ const App = () => {
       {/* Footer */}
       <footer className="footer-gradient flex items-center justify-center px-8 py-4 mt-10 shadow-xl">
         <div className="company-logo">
-          <img src="/images/logo.png" alt="Company Logo" style={{ width: 32, height: 32 }} />
+          <Image src="/images/logo.png" alt="Company Logo" width={32} height={32} />
         </div>
         <span className="ml-3 text-base font-semibold tracking-wide">Aurora Solution &copy; {new Date().getFullYear()}</span>
       </footer>

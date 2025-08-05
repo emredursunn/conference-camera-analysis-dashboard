@@ -39,9 +39,7 @@ export default function Sidebar({ open, onToggle }: SidebarProps) {
   const [selectedConference, setSelectedConference] = useState(conferences[0]);
   const router = useRouter();
 
-  const handleLogout = () => {
-    router.push("/login");
-  };
+
 
   return (
     <div

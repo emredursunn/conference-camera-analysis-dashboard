@@ -1811,7 +1811,6 @@ interface ConferenceReactionsChartProps {
 const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({ 
   data = reactionData, 
   audioLevelData: audioData = audioLevelData, 
-  width = '100%', 
   height = 500 
 }) => {
   const chartRef = useRef<any>(null);
@@ -1963,13 +1962,13 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
             const dbValue = Array.isArray(param.data) ? param.data[1] : param.data;
             result += `<div style="color: #8B5CF6; margin: 4px 0;">🔊 Audio: <strong>${dbValue.toFixed(1)} dB</strong></div>`;
           } else if (param.seriesName === 'Laughter') {
-            const [time, confidence, timeStr, totalReactions] = param.data;
+            const [, confidence, , totalReactions] = param.data;
             result += `<div style="color: #F59E0B; margin: 4px 0;">😄 Laughter: <strong>${(confidence * 100).toFixed(1)}%</strong></div>`;
             if (totalReactions > 1) {
               result += `<div style="color: #92400E; font-size: 11px; margin: 2px 0;">• ${totalReactions} reactions in 5s interval</div>`;
             }
           } else if (param.seriesName === 'Applause') {
-            const [time, confidence, timeStr, totalReactions] = param.data;
+            const [, confidence, , totalReactions] = param.data;
             result += `<div style="color: #10B981; margin: 4px 0;">👏 Applause: <strong>${(confidence * 100).toFixed(1)}%</strong></div>`;
             if (totalReactions > 1) {
               result += `<div style="color: #047857; font-size: 11px; margin: 2px 0;">• ${totalReactions} reactions in 5s interval</div>`;
