@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ReactECharts from "echarts-for-react";
+import Image from "next/image";
 import type { FC } from "react";
 
 // ------------------ Dummy Data ------------------ //
@@ -302,10 +303,12 @@ const AttentionAnalysisChart: FC<Props> = ({
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
           onClick={() => setModalImage(null)}
         >
-          <img
+          <Image
             src={modalImage}
             alt="Peak attention moment"
-            className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl"
+            width={800}
+            height={600}
+            className="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl object-contain"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

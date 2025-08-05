@@ -8,10 +8,8 @@ import OverallEmotionDonutChart from "./components/OverallEmotionDonutChart";
 import VIPEmotionRadarChart from "./components/VIPEmotionRadarChart";
 import EmotionOverTimeChart from "./components/EmotionOverTimeChart";
 import { useContext } from "react";
-
-// Sidebar context
-export const SidebarOpenContext = React.createContext(true);
 import ConferenceReactionsChart from "./components/ConferenceReactionsChart";
+import { SidebarOpenContext } from "./context/SidebarContext";
 
 // Profil menüsü bileşeni
 const ProfileMenu = () => {

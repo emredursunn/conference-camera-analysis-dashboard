@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import ReactECharts from "echarts-for-react";
 import type { FC } from "react";
 

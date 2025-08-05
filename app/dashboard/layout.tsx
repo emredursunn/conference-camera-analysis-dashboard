@@ -1,8 +1,7 @@
 "use client";
 import Sidebar from "./components/shared/Sidebar";
 import { useState } from "react";
-
-import { SidebarOpenContext } from "./page";
+import { SidebarOpenContext } from "./context/SidebarContext";
 
 export default function DashboardLayout({
   children,
