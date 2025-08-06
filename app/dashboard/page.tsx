@@ -102,31 +102,31 @@ const App = () => {
       <main className="flex flex-col gap-8 px-4 md:px-12">
         {/* 1. Katılım Trendi */}
         <div className="card-modern w-full">
-          <div className="card-title text-2xl mb-2">Katılım Trendi</div>
+          <div className="card-title text-2xl mb-2">Attendance Trend & Conference Sections</div>
           <AttendanceTrendChart />
         </div>
 
         {/* 2. Genel Duygu & VIP Duygu Profili yan yana (xl ve üstü), küçükte alt alta */}
         <div className="flex flex-col xl:flex-row gap-8 w-full">
           <div className="card-modern flex-1">
-            <div className="card-title text-2xl mb-2">Genel Duygu</div>
+            <div className="card-title text-2xl mb-2">Overall Emotion Distribution in Meeting</div>
             <OverallEmotionDonutChart />
           </div>
           <div className="card-modern flex-1">
-            <div className="card-title text-2xl mb-2">VIP Duygu Profili</div>
+            <div className="card-title text-2xl mb-2">VIP Emotion Profile</div>
             <VIPEmotionRadarChart />
           </div>
         </div>
 
         {/* 3. Dikkat Analizi */}
         <div className="card-modern w-full">
-          <div className="card-title text-2xl mb-2">Dikkat Analizi</div>
+          <div className="card-title text-2xl mb-2">Attention Analysis</div>
           <AttentionAnalysisChart />
         </div>
 
         {/* 4. Duygu Zaman Çizgisi */}
         <div className="card-modern w-full min-w-0 overflow-x-auto p-2 md:p-4">
-          <div className="card-title text-2xl mb-2">Duygu Zaman Çizgisi</div>
+          <div className="card-title text-2xl mb-2">General Meeting Emotional Flow by Time</div>
           <div className="min-w-0">
             <EmotionOverTimeChart key={sidebarOpen ? 'open' : 'closed'} />
           </div>
@@ -134,7 +134,7 @@ const App = () => {
 
         {/* 5. Konferans Reaksiyonları */}
         <div className="card-modern w-full">
-          <div className="card-title text-2xl mb-2">Konferans Reaksiyonları</div>
+          <div className="card-title text-2xl mb-2">Conference Reactions</div>
           <ConferenceReactionsChart />
         </div>
       </main>

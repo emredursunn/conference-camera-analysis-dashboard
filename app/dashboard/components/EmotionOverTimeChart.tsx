@@ -165,12 +165,12 @@ const EmotionOverTimeChart: FC<EmotionOverTimeProps> = ({ data = demoEmotionOver
 
   const option: any = {
     backgroundColor: 'transparent',
-    title: {
-      text: 'Zamana Göre Genel Toplantı Duygu Akışı',
-      left: 'center',
-      top: 10,
-      textStyle: { color: '#374151', fontSize: 18, fontWeight: '600' },
-    },
+    // title: {
+    //   text: 'Zamana Göre Genel Toplantı Duygu Akışı',
+    //   left: 'center',
+    //   top: 10,
+    //   textStyle: { color: '#374151', fontSize: 18, fontWeight: '600' },
+    // },
     tooltip: {
       trigger: 'axis',
       backgroundColor: 'rgba(255, 255, 255, 0.9)',

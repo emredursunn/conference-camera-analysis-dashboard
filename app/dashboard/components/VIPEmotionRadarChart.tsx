@@ -106,12 +106,12 @@ const VIPEmotionRadarChart: FC<Props> = ({ data = vipEmotionProfiles, height = 3
 
   const option: any = {
     backgroundColor: "transparent",
-    title: {
-      text: "VIP Emotion Profile",
-      left: "center",
-      top: 5,
-      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
-    },
+    // title: {
+    //   text: "VIP Emotion Profile",
+    //   left: "center",
+    //   top: 5,
+    //   textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
+    // },
     tooltip: {
       trigger: "item",
       className: "rounded-lg bg-white border-gray-200 text-gray-700",

@@ -13,18 +13,18 @@ import type { FC } from "react";
 export const attendanceTimeline = {
   series: [
     { minute: 0, participants: 12 },
-    { minute: 5, participants: 14 },
-    { minute: 10, participants: 13, left: 1 },
-    { minute: 15, participants: 12 },
-    { minute: 20, participants: 11, left: 2, image: "/images/peak-sec.png" },
-    { minute: 25, participants: 11 },
-    { minute: 30, participants: 10 },
-    { minute: 35, participants: 10 },
-    { minute: 40, participants: 9, left: 1 },
-    { minute: 45, participants: 8, left: 2, image: "/images/peak-sec2.png" },
-    { minute: 50, participants: 7 },
-    { minute: 55, participants: 7 },
-    { minute: 60, participants: 7 },
+    { minute: 5, participants: 14 }, // 2 new participants joined
+    { minute: 10, participants: 13, left: 1 }, // 1 participant left (14-1=13)
+    { minute: 15, participants: 12, left: 1 }, // 1 more participant left (13-1=12)
+    { minute: 20, participants: 10, left: 2, image: "/images/peak-sec.png" }, // 2 participants left (12-2=10)
+    { minute: 25, participants: 10 },
+    { minute: 30, participants: 9, left: 1 }, // 1 participant left (10-1=9)
+    { minute: 35, participants: 9 },
+    { minute: 40, participants: 8, left: 1 }, // 1 participant left (9-1=8)
+    { minute: 45, participants: 6, left: 2, image: "/images/peak-sec2.png" }, // 2 participants left (8-2=6)
+    { minute: 50, participants: 6 },
+    { minute: 55, participants: 5, left: 1 }, // 1 participant left (6-1=5)
+    { minute: 60, participants: 5 },
   ],
   sections: [
     {
@@ -163,12 +163,12 @@ const AttendanceTrendChart: FC<Props> = ({ data = attendanceTimeline, height = 4
 
   const option: any = {
     backgroundColor: "transparent",
-    title: {
-      text: "Attendance Trend & Conference Sections",
-      left: "center",
-      top: 5,
-      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
-    },
+    // title: {
+    //   text: "Attendance Trend & Conference Sections",
+    //   left: "center",
+    //   top: 5,
+    //   textStyle: { color: "#374151", fontSize: 16, fontWeight: "600" },
+    // },
     tooltip: {
       trigger: "axis",
       formatter: (p: any[]) => {

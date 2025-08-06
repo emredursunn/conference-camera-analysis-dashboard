@@ -47,12 +47,12 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
 
   const option: any = {
     backgroundColor: "transparent",
-    title: {
-      text: "Overall Emotion Distribution in Meeting",
-      left: "center",
-      top: 10,
-      textStyle: { color: "#374151", fontSize: 16 },
-    },
+    // title: {
+    //   text: "Overall Emotion Distribution in Meeting",
+    //   left: "center",
+    //   top: 10,
+    //   textStyle: { color: "#374151", fontSize: 16 },
+    // },
     tooltip: {
       trigger: "item",
       formatter: "{b}: {d}%",
