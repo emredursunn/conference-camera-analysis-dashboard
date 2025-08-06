@@ -37,33 +37,38 @@ export const attentionDrilldown = {
   sec1: {
     points: [
       { second: 0, attention: 70 },
-      { second: 200, attention: 75 },
-      { second: 400, attention: 80, image: "/images/peak-sec3.png" },
-      { second: 600, attention: 85 },
-      { second: 800, attention: 78 },
-      { second: 1000, attention: 73 },
-      { second: 1200, attention: 72 },
+      { second: 150, attention: 75 },
+      { second: 300, attention: 80 },
+      { second: 450, attention: 85, image: "/images/peak-sec3.png" },
+      { second: 600, attention: 78 },
+      { second: 750, attention: 73 },
+      { second: 900, attention: 72 },
     ],
     incidents: [
       { second: 120, type: "phone", user: "alex@example.com" },
-      { second: 300, type: "sleep", user: "john@example.com" },
-      { second: 500, type: "phone", user: "maya@example.com" },
-      { second: 700, type: "sleep", user: "john@example.com" },
-      { second: 900, type: "phone", user: "alex@example.com" },
-      { second: 1100, type: "phone", user: "maya@example.com" },
-      { second: 700, type: "phone", user: "maya@example.com" },
-      { second: 900, type: "sleep", user: "john@example.com" },
-      { second: 1100, type: "phone", user: "alex@example.com" },
-      { second: 100, type: "sleep", user: "jane@example.com" },
-      { second: 300, type: "sleep", user: "dosdse@example.com" },
-      { second: 500, type: "phone", user: "alesdccx@example.com" },
-      { second: 700, type: "phone", user: "maysca@example.com" },
-      { second: 900, type: "sleep", user: "johcsn@example.com" },
-      { second: 1100, type: "phone", user: "alcsaex@example.com" },
-      { second: 100, type: "sleep", user: "csasc@example.com" },
-      { second: 300, type: "sleep", user: "doesca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+   
+
+ 
     ],
   },
   sec2: {
@@ -80,88 +85,64 @@ export const attentionDrilldown = {
       { second: 150, type: "sleep", user: "john@example.com" },
       { second: 350, type: "phone", user: "alex@example.com" },
       { second: 550, type: "phone", user: "maya@example.com" },
-      { second: 750, type: "sleep", user: "john@example.com" },
-      { second: 950, type: "phone", user: "alex@example.com" },
-      { second: 100, type: "sleep", user: "jane@example.com" },
-      { second: 300, type: "sleep", user: "doe@example.com" },
-      { second: 500, type: "phone", user: "alex@example.com" },
-      { second: 700, type: "phone", user: "maya@example.com" },
-      { second: 900, type: "sleep", user: "john@example.com" },
-      { second: 1100, type: "phone", user: "alex@example.com" },
-      { second: 100, type: "sleep", user: "jane@example.com" },
-      { second: 300, type: "sleep", user: "dosdse@example.com" },
-      { second: 500, type: "phone", user: "alesdccx@example.com" },
-      { second: 700, type: "phone", user: "maysca@example.com" },
-      { second: 900, type: "sleep", user: "johcsn@example.com" },
-      { second: 1100, type: "phone", user: "alcsaex@example.com" },
-      { second: 100, type: "sleep", user: "csasc@example.com" },
-      { second: 300, type: "sleep", user: "doesca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 900, type: "sleep", user: "jorwegerhn@example.com" },
-      { second: 1100, type: "phone", user: "albrbrex@example.com" },
-      { second: 1150, type: "phone", user: "maya@example.com" },
-      { second: 700, type: "phone", user: "maysca@example.com" },
-      { second: 900, type: "sleep", user: "johcsn@example.com" },
-      { second: 1100, type: "phone", user: "alcsaex@example.com" },
-      { second: 100, type: "sleep", user: "csasc@example.com" },
-      { second: 300, type: "sleep", user: "doesca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 900, type: "sleep", user: "jorwegerhn@example.com" },
-      { second: 1100, type: "phone", user: "albrbrex@example.com" },
-      { second: 1150, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+
+   
+    
+
     ],
   },
   sec3: {
     points: [
       { second: 0, attention: 66 },
-      { second: 200, attention: 68 },
-      { second: 400, attention: 72 },
-      { second: 600, attention: 78, image: "/images/peak-sec3.png" },
-      { second: 800, attention: 74 },
-      { second: 1000, attention: 70 },
-      { second: 1200, attention: 69 },
+      { second: 250, attention: 68 },
+      { second: 500, attention: 72 },
+      { second: 750, attention: 78, image: "/images/peak-sec3.png" },
+      { second: 1000, attention: 74 },
+      { second: 1250, attention: 70 },
+      { second: 1500, attention: 69 },
     ],
     incidents: [
-      { second: 100, type: "sleep", user: "jane@example.com" },
-      { second: 300, type: "sleep", user: "doe@example.com" },
-      { second: 500, type: "phone", user: "alex@example.com" },
-      { second: 700, type: "phone", user: "maya@example.com" },
-      { second: 900, type: "sleep", user: "john@example.com" },
-      { second: 1100, type: "phone", user: "alex@example.com" },
-      { second: 100, type: "sleep", user: "jane@example.com" },
-      { second: 300, type: "sleep", user: "dosdse@example.com" },
-      { second: 500, type: "phone", user: "alesdccx@example.com" },
-      { second: 700, type: "phone", user: "maysca@example.com" },
-      { second: 900, type: "sleep", user: "johcsn@example.com" },
-      { second: 1100, type: "phone", user: "alcsaex@example.com" },
-      { second: 100, type: "sleep", user: "csasc@example.com" },
-      { second: 300, type: "sleep", user: "doesca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 900, type: "sleep", user: "jorwegerhn@example.com" },
-      { second: 1100, type: "phone", user: "albrbrex@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
-      { second: 500, type: "phone", user: "alcsagex@example.com" },
-      { second: 700, type: "phone", user: "maycsca@example.com" },
+      { second: 200, type: "sleep", user: "jane@example.com" },
+      { second: 400, type: "sleep", user: "doe@example.com" },
+      { second: 600, type: "phone", user: "alex@example.com" },
+      { second: 150, type: "sleep", user: "john@example.com" },
+      { second: 350, type: "phone", user: "alex@example.com" },
+      { second: 550, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+      { second: 360, type: "phone", user: "maya@example.com" },
+      { second: 120, type: "phone", user: "alex@example.com" },
+      { second: 240, type: "sleep", user: "john@example.com" },
+
+    
+
     ],
   },
 };
@@ -238,101 +219,93 @@ const AttentionAnalysisChart: FC<Props> = ({
   };
 
   // ------------ Line Chart Option (if selected) ------------ //
-  const lineOption = (() => {
-    if (!selectedSec) return null;
-    const drill = drilldown[selectedSec as keyof typeof drilldown];
-    if (!drill) return null;
-    const markPoints = [
-      ...drill.points
-        .filter((p:any) => p.image)
-        .map((p:any) => ({
-          name: "Peak Moment",
-          xAxis: p.second,
-          yAxis: p.attention,
-          symbol: "circle",
-          symbolSize: 32,
-          symbolOffset: [0, -20],
-          itemStyle: {
-            color: "#4CC9F0",
-            borderColor: "#FFFFFF",
-            borderWidth: 3,
-            shadowColor: "rgba(76, 201, 240, 0.4)",
-            shadowBlur: 8,
-            shadowOffsetY: 2
-          },
-          label: {
-            show: true,
-            formatter: "📷",
-            fontSize: 14,
-            color: "#FFFFFF",
-            fontWeight: "bold",
-            position: "inside"
-          },
-          emphasis: {
-            itemStyle: {
-              color: "#F72585",
-              borderColor: "#FFFFFF",
-              borderWidth: 4,
-              shadowColor: "rgba(247, 37, 133, 0.6)",
-              shadowBlur: 12,
-              shadowOffsetY: 3,
-              scale: 1.2
-            }
-          },
-          tooltip: {
-            formatter: "📷 Peak Attention Moment<br/>Click to view photo",
-          },
-          isImage: true,
-          imageUrl: p.image,
-        })),
-    ];
+// ------------ Line Chart Option (dinamik X ekseni) ------------ //
+const lineOption = (() => {
+  if (!selectedSec) return null;
+  const drill = drilldown[selectedSec as keyof typeof drilldown];
+  if (!drill) return null;
 
-    return {
-      backgroundColor: "transparent",
-      title: {
-        text: `Attention Trend\n\n${sections.find((s) => s.id === selectedSec)?.title}`,
-        left: "center",
-        top: 5,
-        textStyle: { color: "#374151", fontSize: 16, fontWeight: "600",alignText:"center" },
+  const currentSection = sections.find((s) => s.id === selectedSec);
+  const maxSecond = (currentSection!.end_min - currentSection!.start_min) * 60;
+  const markPoints = drill.points
+  .filter((p: any) => p.image)
+  .map((p: any) => ({
+    name: "Peak Moment",
+    coord: [p.second, p.attention],
+    symbol: `image://${p.image}`,
+    symbolSize: [80, 60],
+    symbolOffset: [40, -40],
+    itemStyle: {
+      borderColor: "#FFFFFF",
+      borderWidth: 3,
+      shadowColor: "rgba(76, 201, 240, 0.4)",
+      shadowBlur: 8,
+      shadowOffsetY: 2,
+    },
+    emphasis: {
+      itemStyle: {
+        borderColor: "#F72585",
+        borderWidth: 4,
+        shadowColor: "rgba(247, 37, 133, 0.6)",
+        shadowBlur: 12,
+        shadowOffsetY: 3,
       },
-      tooltip: { trigger: "axis" },
-      grid: { top: "18%", bottom: "10%", left: "10%", right: "5%" },
-      xAxis: {
-        type: "value",
-        name: "Time (minute:second)",
-        min: 0,
-        max: 1200,
-        nameLocation: "middle",
-        nameGap: 25,
-        axisLabel: {
-          color: "#4B5563",
-          formatter: function (value: number) {
-            const min = Math.floor(value / 60);
-            const sec = Math.floor(value % 60);
-            return `${min}:${sec.toString().padStart(2, '0')}`;
-          }
+      symbolSize: [72, 54],
+    },
+    tooltip: {
+      formatter: `<img src="${p.image}" style="width:150px;height:auto;border-radius:8px;"/><br/>Peak Attention Moment<br/>Click to enlarge photo`,
+    },
+    isImage: true,
+    imageUrl: p.image,
+  }));
+
+  return {
+    backgroundColor: "transparent",
+    title: {
+      text: `Attention Trend\n\n${currentSection?.title}`,
+      left: "center",
+      top: 5,
+      textStyle: { color: "#374151", fontSize: 16, fontWeight: "600", alignText: "center" },
+    },
+    tooltip: { trigger: "axis" },
+    grid: { top: "18%", bottom: "10%", left: "10%", right: "5%" },
+    xAxis: {
+      type: "value",
+      name: "Time (minute:second)",
+      min: 0,
+      max: maxSecond, // dinamik maksimum saniye
+      nameLocation: "middle",
+      nameGap: 25,
+      axisLabel: {
+        color: "#4B5563",
+        formatter: function (value: number) {
+          const min = Math.floor(value / 60);
+          const sec = Math.floor(value % 60);
+          return `${min}:${sec.toString().padStart(2, '0')}`;
         },
-        axisLine: { lineStyle: { color: "#9CA3AF" } },
       },
-      yAxis: {
-        type: "value",
-        max: 100,
-        axisLabel: { color: "#4B5563", formatter: "{value}%" },
-        splitLine: { lineStyle: { color: "#E5E7EB" } },
+      axisLine: { lineStyle: { color: "#9CA3AF" } },
+    },
+    yAxis: {
+      type: "value",
+      max: 100,
+      axisLabel: { color: "#4B5563", formatter: "{value}%" },
+      splitLine: { lineStyle: { color: "#E5E7EB" } },
+    },
+    series: [
+      {
+        name: "Attention",
+        type: "line",
+        smooth: 0.5,
+        areaStyle: { color: barColor, opacity: 0.3 },
+        lineStyle: { color: barColor, width: 2 },
+        data: drill.points.map((p) => [p.second, p.attention]),
+        markPoint: { data: markPoints, symbol: "circle" },
       },
-      series: [
-        {
-          name: "Attention",
-          type: "line",
-          smooth: 0.5,
-          areaStyle: { color: barColor, opacity: 0.3 },
-          lineStyle: { color: barColor, width: 2 },
-          data: drill.points.map((p) => [p.second, p.attention]),
-          markPoint: { data: markPoints, symbol: "circle" },
-        },
-      ],
-    };
-  })();
+    ],
+  };
+})();
+
 
   // Click handlers
   const onBarClick = (e: any) => {

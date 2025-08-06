@@ -11,20 +11,20 @@ import type { FC } from "react";
 // -------------------------------------------------------------
 
 export const attendanceTimeline = {
-  series: [
-    { minute: 0, participants: 12 },
-    { minute: 5, participants: 14 }, // 2 new participants joined
-    { minute: 10, participants: 13, left: 1 }, // 1 participant left (14-1=13)
-    { minute: 15, participants: 12, left: 1 }, // 1 more participant left (13-1=12)
-    { minute: 20, participants: 10, left: 2, image: "/images/peak-sec.png" }, // 2 participants left (12-2=10)
-    { minute: 25, participants: 10 },
-    { minute: 30, participants: 9, left: 1 }, // 1 participant left (10-1=9)
-    { minute: 35, participants: 9 },
-    { minute: 40, participants: 8, left: 1 }, // 1 participant left (9-1=8)
-    { minute: 45, participants: 6, left: 2, image: "/images/peak-sec2.png" }, // 2 participants left (8-2=6)
-    { minute: 50, participants: 6 },
-    { minute: 55, participants: 5, left: 1 }, // 1 participant left (6-1=5)
-    { minute: 60, participants: 5 },
+series: [
+  { minute: 0, participants: 120 },
+  { minute: 5, participants: 150 }, // 30 yeni katılımcı geldi
+    { minute: 10, participants: 141, left: 9 }, // 15 kişi ayrıldı (250-15=235)
+  { minute: 15, participants: 125, left: 6 }, // 10 kişi daha ayrıldı (235-10=225)
+  { minute: 20, participants: 110, left: 15, image: "/images/peak-sec.png" }, // 15 kişi ayrıldı (225-15=210)
+  { minute: 25, participants: 110 },
+  { minute: 30, participants: 97, left: 13 }, // 10 kişi ayrıldı (210-10=200)
+  { minute: 35, participants: 100 },
+  { minute: 40, participants: 90, left: 10 }, // 10 kişi ayrıldı (200-10=190)
+  { minute: 45, participants: 80, left: 10, image: "/images/peak-sec2.png" }, // 20 kişi ayrıldı (190-20=170)
+  { minute: 50, participants: 80 },
+  { minute: 55, participants: 72, left: 8 }, // 10 kişi ayrıldı (170-10=160)
+    { minute: 60, participants: 72 },
   ],
   sections: [
     {
