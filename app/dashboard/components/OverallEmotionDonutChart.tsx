@@ -58,7 +58,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
       formatter: "{b}: {d}%",
     },
     legend: {
-      top: 50,
+      top: 45,
       left: "center",
 
       itemWidth: 14,
