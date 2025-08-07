@@ -107,12 +107,17 @@ const App = () => {
         </div>
 
         {/* 2. Genel Duygu & VIP Duygu Profili yan yana (xl ve üstü), küçükte alt alta */}
-        <div className="flex flex-col xl:flex-row gap-8 w-full">
-          <div className="card-modern flex-1">
+        <div
+  className="flex flex-row flex-wrap gap-8 w-full transition-all duration-500 ease-in-out"
+  style={{
+    transitionProperty: 'flex-direction, gap',
+  }}
+>
+          <div className="card-modern flex-1 min-w-[320px]">
             <div className="card-title text-2xl mb-2">Overall Emotion Distribution in Meeting</div>
             <OverallEmotionDonutChart />
           </div>
-          <div className="card-modern flex-1">
+          <div className="card-modern flex-1 min-w-[320px]">
             <div className="card-title text-2xl mb-2">VIP Emotion Profile</div>
             <VIPEmotionRadarChart />
           </div>
