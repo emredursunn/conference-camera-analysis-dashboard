@@ -8249,10 +8249,10 @@ const ConferenceReactionsChart: React.FC<ConferenceReactionsChartProps> = ({
       },
     },
     grid: {
-      left: '8%',
-      right: '8%',
-      bottom: '12%',
-      top: '25%',
+      left: '12%',
+      right: '14%',
+      top: '14%',
+      bottom: '16%',
       containLabel: true,
       backgroundColor: 'rgba(249, 250, 251, 0.3)',
       borderRadius: 8

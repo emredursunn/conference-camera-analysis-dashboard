@@ -275,7 +275,8 @@ const lineOption = (() => {
       min: 0,
       max: maxSecond, // dinamik maksimum saniye
       nameLocation: "middle",
-      nameGap: 25,
+      nameGap: 44,
+      nameTextStyle: { color: "#4B5563", fontSize: 13, fontWeight: "bold" },
       axisLabel: {
         color: "#4B5563",
         formatter: function (value: number) {
