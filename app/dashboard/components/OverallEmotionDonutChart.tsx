@@ -58,8 +58,9 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
       formatter: "{b}: {d}%",
     },
     legend: {
-      top: 42,
+      top: 50,
       left: "center",
+
       itemWidth: 14,
       itemHeight: 14,
       textStyle: { color: "#4B5563", fontSize: 12 },
@@ -71,6 +72,7 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
         name: "Emotion Share",
         type: "pie",
         radius: ["50%", "70%"],
+        center: ["50%", "58%"],
         avoidLabelOverlap: false,
         label: {
           show: false,
@@ -94,7 +96,21 @@ const OverallEmotionDonutChart: FC<Props> = ({ data = defaultOverallEmotionDistr
     ],
   };
 
-  return <ReactECharts option={option} style={{ width: "100%", height }} opts={{ renderer: "canvas" }} />;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: typeof height === "number" ? `${height}px` : height || "100%",
+        aspectRatio: "1 / 1",
+        minWidth: 0,
+      }}
+    >
+      <ReactECharts option={option} style={{ width: "100%", height: "100%" }} opts={{ renderer: "canvas" }} />
+    </div>
+  );
 };
 
 export default OverallEmotionDonutChart;

@@ -165,7 +165,14 @@ const VIPEmotionRadarChart: FC<Props> = ({
   };
 
   return (
-    <div className="rounded-xl p-4 h-full flex flex-col">
+    <div className="rounded-x1 p-1 h-full flex flex-col">
+      <div className="flex-grow" style={{ minHeight: height }}>
+        <ReactECharts
+          option={option}
+          style={{ width: "100%", height: "100%" }}
+          opts={{ renderer: "canvas" }}
+        />
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
         <span className="text-gray-700 text-sm font-medium shrink-0">
           Select VIP(s) (Max 3):
@@ -186,13 +193,6 @@ const VIPEmotionRadarChart: FC<Props> = ({
             </button>
           ))}
         </div>
-      </div>
-      <div className="flex-grow" style={{ minHeight: height }}>
-        <ReactECharts
-          option={option}
-          style={{ width: "100%", height: "100%" }}
-          opts={{ renderer: "canvas" }}
-        />
       </div>
     </div>
   );
